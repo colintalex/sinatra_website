@@ -8,6 +8,8 @@ gem 'activerecord'
 gem 'sinatra-activerecord'
 gem 'tux'
 gem 'shotgun'
+gem 'rerun'
+gem 'bootstrap', '~> 4.5.2'
 
 group :test do
   gem 'capybara'
