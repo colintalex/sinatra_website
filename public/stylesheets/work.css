@@ -1,0 +1,14 @@
+.nav#myTab {
+  padding-left: 30%;
+  padding-right: 30%;
+}
+
+.tab-pane#projects, .nav-link#projects-tab {
+  background-color: #7c8e8f;
+  border-color: #7c8e8f;
+}
+
+.tab-pane#graphics, .nav-link#graphics-tab {
+  background-color: #8f7d7c;
+  border-color: #8f7d7c;
+}

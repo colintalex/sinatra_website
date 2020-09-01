@@ -1,0 +1,11 @@
+development:
+  adapter: postgresql
+  database: sinatra-website-development
+
+test:
+  adapter: postgresql
+  database: sinatra-website-test
+
+production:
+  adapter: postgresql
+  database: sinatra-website-production
