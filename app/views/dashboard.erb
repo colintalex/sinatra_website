@@ -1,0 +1,19 @@
+<div class="container" id="myDashboard">
+  <h3>dashboard</h3>
+  <div class="links container">
+    <ul class="links">
+      <li><a href="/admin/projects/new">New Project</a></li>
+    </ul>
+  </div>
+  <div class="container project-list">
+    <ul>
+      <% @projects.each do |p| %>
+        <h5><%= p.title %></h5>
+        <form class="" action="/admin/projects/<%= p.id %>" method="post">
+          <input type="hidden" name="_method" value="delete">
+          <input type="submit" value="Delete Project">
+        </form>
+      <% end %>
+    </ul>
+  </div>
+</div>
