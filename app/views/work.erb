@@ -9,10 +9,10 @@
   </ul>
   <div class="tab-content" id="myTabContent">
     <div class="tab-pane fade show active" id="projects" role="tabpanel" aria-labelledby="projects-tab">
-    <% @projects.each do |project| %>
-      <%= project.title %>
-      <%= project.description %>
-    <% end %>
+      <% @projects.each do |project| %>
+        <%= project.title %>
+        <%= project.description %>
+      <% end %>
     </div>
     <div class="tab-pane fade" id="graphics" role="tabpanel" aria-labelledby="graphics-tab">
       <% @graphics.each do |graphic| %>
