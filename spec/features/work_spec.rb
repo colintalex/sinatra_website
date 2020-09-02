@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 RSpec.describe "As a visitor" do
+  
   describe "I can view the page properly" do
     it "displays the nav bar" do
       visit '/work'
