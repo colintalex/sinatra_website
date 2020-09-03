@@ -1,0 +1,28 @@
+<div class="container">
+  <form class="" action="/admin/graphics/<%= @graphic.id %>" method="POST">
+    <div class="form-group">
+      <label for="date">Date</label>
+      <input type="text" name="date" class="form-control" id="date"
+        placeholder="<%= @graphic.date %>" value="<%= @graphic.date %>">
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <input type="text" name="description" class="form-control" id="description"
+        placeholder="<%= @graphic.description %>"  value="<%= @graphic.description %>">
+    </div>
+    <div class="form-group">
+      <label for="image">Image</label>
+      <input type="text" name="image" class="form-control" id="image"
+        placeholder="<%= @graphic.image %>" value="<%= @graphic.image %>">
+    </div>
+    <div class="form-group">
+      <label for="work_hours">Work Hours</label>
+      <input type="text" name="work_hours" class="form-control" id="work_hours"
+        placeholder="<%= @graphic.work_hours %>" value="<%= @graphic.work_hours %>">
+    </div>
+    <div class="form-group">
+      <input type="hidden" name="_method" value="patch">
+      <input type="submit" value="Submit">
+    </div>
+  </form>
+</div>

@@ -22,6 +22,40 @@ class SinatraWebsite < Sinatra::Base
     erb :dashboard, :layout => :template
   end
 
+  get '/admin/graphics/new' do
+    erb :new_graphic, :layout => :template
+  end
+
+  post '/admin/graphics' do
+    graphic = Graphic.new(params)
+    if graphic.save
+      redirect '/admin'
+    else
+      redirect '/admin/graphics/new'
+    end
+  end
+
+  get '/admin/graphics/:id/edit' do
+    @graphic = Graphic.find(params[:id])
+    erb :edit_graphic, :layout => :template
+  end
+
+  patch '/admin/graphics/:id' do
+    graphic = Graphic.find(params[:id])
+    graphic.update(date: params[:date],
+          description: params[:description],
+                image: params[:image],
+           work_hours: params[:work_hours])
+
+    redirect '/admin'
+  end
+
+  delete "/admin/graphics/:id" do
+    graphic = Graphic.find(params[:id])
+    graphic.destroy
+    redirect '/admin'
+  end
+
   get '/admin/projects/new' do
     # protected!
     erb :new_project, :layout => :template
