@@ -27,6 +27,21 @@ class SinatraWebsite < Sinatra::Base
     erb :new_project, :layout => :template
   end
 
+  get '/admin/projects/:id/edit' do
+    @project = Project.find(params[:id])
+    erb :edit_project, :layout => :template
+  end
+
+  patch '/admin/projects/:id' do
+    proj = Project.find(params[:id])
+    proj.update(title: params[:title],
+          description: params[:description],
+                image: params[:image],
+           github_url: params[:github_url],
+           deploy_url: params[:deploy_url])
+    redirect '/admin'
+  end
+
   post '/admin/projects' do
     proj = Project.new(params)
     if proj.save

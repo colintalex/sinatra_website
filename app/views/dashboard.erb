@@ -9,6 +9,7 @@
     <ul>
       <% @projects.each do |p| %>
         <h5><%= p.title %></h5>
+        <a class="btn btn-primary" href="/admin/projects/<%= p.id %>/edit" role="button">Edit Project</a>
         <form class="" action="/admin/projects/<%= p.id %>" method="post">
           <input type="hidden" name="_method" value="delete">
           <input type="submit" value="Delete Project">

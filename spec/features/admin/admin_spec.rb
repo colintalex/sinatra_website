@@ -32,6 +32,29 @@ RSpec.describe "As a registered admin" do
     expect(proj.deploy_url).to eql('deploy_link')
   end
 
+  it "I can edit and update a project" do
+    project = Project.create(title: 'Title',
+             description: 'description',
+                   image: 'image',
+              github_url: 'ghlink',
+              deploy_url: 'deploy_link')
+
+    visit '/admin'
+
+    within '.project-list' do
+      click_on 'Edit Project'
+    end
+
+    fill_in :title, with: 'New Title'
+    fill_in :description, with: 'New description'
+    click_on 'Submit'
+
+    expect(current_path).to eql('/admin')
+    proj = Project.last
+    expect(proj.title).to eql('New Title')
+    expect(proj.description).to eql('New description')
+  end
+
   it "I can delete a project" do
     project = Project.create(title: 'Title',
              description: 'description',
