@@ -3,6 +3,7 @@
   <div class="links container">
     <ul class="links">
       <li><a href="/admin/projects/new">New Project</a></li>
+      <li><a href="/admin/graphics/new">New Graphic</a></li>
     </ul>
   </div>
   <div class="container project-list">
@@ -16,5 +17,15 @@
         </form>
       <% end %>
     </ul>
+  </div>
+  <div class="container graphic-list">
+    <% @graphics.each do |g| %>
+      <h5><%= g.description %></h5>
+      <a class="btn btn-primary" href="/admin/graphics/<%= g.id %>/edit" role="button">Edit Graphic</a>
+      <form class="" action="/admin/graphics/<%= g.id %>" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <input type="submit" value="Delete Graphic">
+      </form>
+    <% end %>
   </div>
 </div>
