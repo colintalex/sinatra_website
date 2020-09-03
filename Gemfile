@@ -10,6 +10,7 @@ gem 'tux'
 gem 'shotgun'
 gem 'rerun'
 gem 'bootstrap', '~> 4.5.2'
+gem 'pry'
 
 group :test do
   gem 'capybara'
