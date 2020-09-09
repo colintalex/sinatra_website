@@ -3,6 +3,10 @@ Bundler.require
 
 require 'sinatra/activerecord/rake'
 
-task :environment do
-  Sinatra::Application.environment = ENV['RACK_ENV']
-end
+require 'rspec/core'
+require 'rspec/core/rake_task'
+
+task :default => :spec
+
+desc "Run all specs in spec directory (excluding plugin specs)"
+RSpec::Core::RakeTask.new(:spec)
