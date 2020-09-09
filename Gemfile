@@ -1,9 +1,10 @@
 source 'https://rubygems.org'
 
+gem 'travis'
 gem 'rack'
 gem 'sinatra'
 gem 'activesupport'
-gem 'pg'
+gem 'pg', '>= 0.18', '< 2.0'
 gem 'activerecord'
 gem 'sinatra-activerecord'
 gem 'tux'
