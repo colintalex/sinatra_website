@@ -27,6 +27,16 @@ class SinatraWebsite < Sinatra::Base
   end
 
   post '/admin/graphics' do
+    if params[:image] && params[:image][:filename]
+      filename = params[:image][:filename]
+      file = params[:image][:tempfile]
+      path = "./public/uploads/#{filename}"
+
+      File.open(path, 'wb') do |f|
+        f.write(file.read)
+      end
+    end
+    params[:image] = "uploads/" + params[:image][:filename]
     graphic = Graphic.new(params)
     if graphic.save
       redirect '/admin'
@@ -54,6 +64,10 @@ class SinatraWebsite < Sinatra::Base
     graphic = Graphic.find(params[:id])
     graphic.destroy
     redirect '/admin'
+  end
+
+  post "/admin/graphics/upload" do
+    require "pry"; binding.pry
   end
 
   get '/admin/projects/new' do
