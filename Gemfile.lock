@@ -209,6 +209,7 @@ DEPENDENCIES
   pry
   rack
   rack-test
+  rake
   rerun
   rspec
   shotgun
