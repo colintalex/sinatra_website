@@ -1,4 +1,6 @@
-language: ruby
-rvm:
-  - 2.2
-  - jruby
+langauge: ruby
+rbenv:
+- 2.5.3
+addons:
+  postgresql: 9.6
+  chrome: stable
