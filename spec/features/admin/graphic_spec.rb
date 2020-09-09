@@ -8,7 +8,6 @@ RSpec.describe "As a registered admin" do
 
     fill_in :date, with: '03/06/2005'
     fill_in :description, with: 'description'
-    fill_in :image, with: 'image'
     fill_in :work_hours, with: 4
 
     click_on 'Submit'
@@ -18,7 +17,6 @@ RSpec.describe "As a registered admin" do
     expect(Graphic.all.count).to eql(1)
     expect(graphic.date).to eql('03/06/2005')
     expect(graphic.description).to eql('description')
-    expect(graphic.image).to eql('image')
     expect(graphic.work_hours).to eql(4)
   end
 

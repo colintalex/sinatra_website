@@ -1,6 +1,6 @@
 <div class="graphic-form container">
   <h3>Create a New Graphic</h3>
-  <form method="POST" action="/admin/graphics">
+  <form method="POST" action="/admin/graphics" enctype="multipart/form-data">
     <div class="form-group">
       <label for="date">Graphic Date</label>
       <input type="text" class="form-control" name="date">
@@ -10,12 +10,11 @@
       <input type="text" class="form-control" name="description">
     </div>
     <div class="form-group">
-      <label for="image">Image URL</label>
-      <input type="text" class="form-control" name="image">
+      <label for="work_hours">Work Hours</label>
+      <input type="text" class="form-control" name="work_hours">
     </div>
     <div class="form-group">
-      <label for="work_hours">GitHub URL</label>
-      <input type="text" class="form-control" name="work_hours">
+      <input type="file" name="image">
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
