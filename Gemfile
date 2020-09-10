@@ -1,9 +1,10 @@
 source 'https://rubygems.org'
 
+gem 'travis'
 gem 'rack'
 gem 'sinatra'
 gem 'activesupport'
-gem 'pg'
+gem 'pg', '>= 0.18', '< 2.0'
 gem 'activerecord'
 gem 'sinatra-activerecord'
 gem 'tux'
@@ -17,4 +18,5 @@ group :test do
   gem 'database_cleaner'
   gem 'rspec'
   gem 'rack-test'
+  gem 'rake'
 end

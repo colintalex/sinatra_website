@@ -35,8 +35,8 @@ class SinatraWebsite < Sinatra::Base
       File.open(path, 'wb') do |f|
         f.write(file.read)
       end
+      params[:image] = "uploads/" + params[:image][:filename]
     end
-    params[:image] = "uploads/" + params[:image][:filename]
     graphic = Graphic.new(params)
     if graphic.save
       redirect '/admin'
