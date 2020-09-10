@@ -1,4 +1,4 @@
-class SinatraWebsite < Sinatra::Base
+class SinatraWebsite < Sinatra::Application
   use Rack::MethodOverride
 
   # use Rack::Auth::Basic do |username, password|
