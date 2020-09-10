@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 ruby '2.5.1'
+
 gem 'travis'
 gem 'rack'
 gem 'sinatra'
@@ -18,9 +19,9 @@ group :test do
   gem 'database_cleaner'
   gem 'rspec'
   gem 'rack-test'
-  gem 'rake'
 end
 
 group :production, :development, :test do
   gem 'rspec-rails', '~> 3.8'
+  gem 'rake'
 end
