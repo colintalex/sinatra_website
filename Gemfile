@@ -20,3 +20,7 @@ group :test do
   gem 'rack-test'
   gem 'rake'
 end
+
+group :production, :development, :test do
+  gem 'rspec-rails', '~> 3.8'
+end
