@@ -1,3 +1,5 @@
+require './config/environment'
+
 class SinatraWebsite < Sinatra::Application
   use Rack::MethodOverride
 
