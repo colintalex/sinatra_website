@@ -20,9 +20,9 @@ class SinatraWebsite < Sinatra::Base
 
   get '/work' do
     puts '1'
-    @projects = Project.all
+    # @projects = Project.all
     puts '2'
-    @graphics = Graphic.all
+    # @graphics = Graphic.all
     puts 'done'
     erb :work, :layout => :template
   end
