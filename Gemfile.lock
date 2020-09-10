@@ -143,6 +143,14 @@ GEM
     rspec-mocks (3.9.1)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.9.0)
+    rspec-rails (3.9.1)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      railties (>= 3.0)
+      rspec-core (~> 3.9.0)
+      rspec-expectations (~> 3.9.0)
+      rspec-mocks (~> 3.9.0)
+      rspec-support (~> 3.9.0)
     rspec-support (3.9.3)
     ruby2_keywords (0.0.2)
     sassc (2.4.0)
@@ -212,6 +220,7 @@ DEPENDENCIES
   rake
   rerun
   rspec
+  rspec-rails (~> 3.8)
   shotgun
   sinatra
   sinatra-activerecord
