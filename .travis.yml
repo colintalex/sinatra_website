@@ -15,8 +15,6 @@ script:
 deploy:
   provider: heroku
   api_key:
-    secure: hWhfBSwgCH+ZdElSeRnyTdeeL5n/uncFPZW0PhEpXGsuAo098s1WTXrKwiyrz7SSv78FAQh3Kns1bBom1bQzFNbzSxImh/QM9FzNHV9dsutHSbxmadcMAwWYSN0pFQGJt3a3eDrnM3WeMuuMZ/+KwItKIP0AIcQSYPkyAfiWoZCxSqHAwYYGKV7X6n66OacKuRnxrgJV806IbTGHmUz96rpEvNJ/FEsOr0TKb3xha1LcavXCd3c6WkBgIq8IIb+jAjHJ4QeHbTMg5OhqHQG+szyF+XuZtSCqeuQx+IyUH5SA3h4013hjArUyvS+t8ZRlCgGDClxk6BoUqAkjreeNVfO/nHYRqQXANPy06i09j4n7I7VRykRPeFz1URCyLZLO60C0W4JxujbFAxOrs37Gu7nkDOiNvazNp2ppADJhaTibkfov4u8gosBXktL80dSMblbbtLN1VC4cNqU+HZ+yHNyIVU6l4myoFeRN4glRiFd4Zjptq9Q6EANfgTGvnGYJgtbJ6rNUryvlaAY0+zLi10Gxww+0QIbpwIAWG3SBqOMwiSoopIqFhPlJYZSjYqDbdVHfHX+ZXATUi2XOjYp3nwQohvoM+rCZiFUdHaZpxGIYVGpZkCinioeC51PGpltJgA4cGganfl5DC6wjerOGjvWiAhW9U+5U4lw0nnIPQb4=
-  app: sinatra_website
-  on:
-    repo: colintalex/sinatra_website
-  skip_cleanup: 'true'
+    secure:
+  run:
+    - "rake db:migrate"
