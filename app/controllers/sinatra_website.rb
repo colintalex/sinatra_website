@@ -1,7 +1,7 @@
 require './config/environment'
 require 'sinatra'
 
-class SinatraWebsite < Sinatra::Application
+class SinatraWebsite < Sinatra::Base
   use Rack::MethodOverride
 
   # use Rack::Auth::Basic do |username, password|

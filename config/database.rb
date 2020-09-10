@@ -1,3 +1,4 @@
+
 database_name = "sinatra-website-#{SinatraWebsite.environment}"
 db = URI.parse(ENV['DATABASE_URL'] || "postgres://localhost/#{database_name}")
 
