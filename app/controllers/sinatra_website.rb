@@ -3,7 +3,7 @@ require 'sinatra'
 
 class SinatraWebsite < Sinatra::Base
   use Rack::MethodOverride
-
+  set :database_file, './config/database.yml'
   # use Rack::Auth::Basic do |username, password|
   #   username == 'admin' and password == 'admin'
   # end
