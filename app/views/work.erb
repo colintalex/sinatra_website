@@ -7,5 +7,25 @@
       <a class="nav-link" id="graphics-tab" data-toggle="tab" href="#graphics" role="tab" aria-controls="graphics" aria-selected="false">Graphic Design</a>
     </li>
   </ul>
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="projects" role="tabpanel" aria-labelledby="projects-tab">
+       <% @projects.each do |project| %>
+        <div class="container">
+        <h4><%= project.title %></h4>
+        <%= project.description %>
+        
+        <a href="<%= project.github_url %>">GitHub Repo</a>
+        </div>
+      <% end %>
+    </div>
+    <div class="tab-pane fade" id="graphics" role="tabpanel" aria-labelledby="graphics-tab">
+      <% @graphics.each do |graphic| %>
+        <%= graphic.date %>
+        <%= graphic.description %>
+        <%= graphic.work_hours %>
 
+      <% end %>
+    </div>
+    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+  </div>
 </div>
