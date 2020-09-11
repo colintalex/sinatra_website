@@ -1,9 +1,18 @@
-class SinatraWebsite < Sinatra::Application
-  use Rack::MethodOverride
+require './config/environment'
+require 'sinatra'
 
+class SinatraWebsite < Sinatra::Base
+  use Rack::MethodOverride
+  set :database_file, './config/database.yml'
   # use Rack::Auth::Basic do |username, password|
   #   username == 'admin' and password == 'admin'
   # end
+  configure do
+    set :method_override, true
+    set :root, APP_ROOT
+    set :views, File.join(APP_ROOT, 'app', 'views')
+    set :public_folder, File.join(APP_ROOT, 'public')
+  end
 
   get '/' do
     erb :welcome, :layout => :template
