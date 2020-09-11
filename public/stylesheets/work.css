@@ -4,11 +4,21 @@
 }
 
 .tab-pane#projects, .nav-link#projects-tab {
-  background-color: #7c8e8f;
-  border-color: #7c8e8f;
+  background-color: #696969;
+  border-color: #696969;
 }
 
 .tab-pane#graphics, .nav-link#graphics-tab {
-  background-color: #8f7d7c;
-  border-color: #8f7d7c;
+  background-color: gray;
+  border-color: gray;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+}
+
+.nav-tabs {
+  border-bottom: none;
 }

@@ -1,30 +1,48 @@
 <div class="container">
   <ul class="nav nav-tabs nav-fill" id="myTab" role="tablist">
     <li class="nav-item" role="presentation">
-      <a class="nav-link active" id="projects-tab" data-toggle="tab" href="#projects" role="tab" aria-controls="projects" aria-selected="true">Code Projects</a>
+      <a class="nav-link text-light active" id="projects-tab" data-toggle="tab" href="#projects" role="tab" aria-controls="projects" aria-selected="true">Code Projects</a>
     </li>
     <li class="nav-item" role="presentation">
-      <a class="nav-link" id="graphics-tab" data-toggle="tab" href="#graphics" role="tab" aria-controls="graphics" aria-selected="false">Graphic Design</a>
+      <a class="nav-link text-light" id="graphics-tab" data-toggle="tab" href="#graphics" role="tab" aria-controls="graphics" aria-selected="false">Graphic Design</a>
     </li>
   </ul>
   <div class="tab-content" id="myTabContent">
-    <div class="tab-pane fade show active" id="projects" role="tabpanel" aria-labelledby="projects-tab">
-       <% @projects.each do |project| %>
-        <div class="container">
-        <h4><%= project.title %></h4>
-        <%= project.description %>
-        <img class="img-thumbnail" src="<%= project.image %>" alt="">
-        <a href="<%= project.github_url %>">GitHub Repo</a>
-        </div>
-      <% end %>
+    <div class="tab-pane fade show active px-auto" id="projects" role="tabpanel" aria-labelledby="projects-tab">
+      <div class="card-group col">
+        <% @projects.each do |project| %>
+          <div class="row">
+            <div class="card text-white m-3">
+              <div class="card-body bg-info">
+                <h4><%= project.title %></h4>
+                <%= project.description %>
+                  <a href="<%= project.github_url %>">GitHub Repo</a>
+              </div>
+              <div class="container proj-bg bg-dark text-center">
+                <img class="card-img-bottom w-75 m-auto" src="<%= project.image %>" alt="">
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
     </div>
     <div class="tab-pane fade" id="graphics" role="tabpanel" aria-labelledby="graphics-tab">
-      <% @graphics.each do |graphic| %>
-        <%= graphic.date %>
-        <%= graphic.description %>
-        <%= graphic.work_hours %>
-        <img class="img-fluid" src="<%= graphic.image %>" alt="">
-      <% end %>
+      <div class="card-group py-3">
+        <% @graphics.each do |graphic| %>
+          <div class="col-sm-4">
+            <div class="card text-white bg-secondary">
+              <img src="<%= graphic.image %>" class="card-img-top mx-auto bg-dark" alt="">
+              <div class="card-body">
+                <h6 class="card-title"><%= graphic.description %></h6>
+                <p class="card-subtitle">Completed: <%= graphic.date %>, Work Hours: <%= graphic.work_hours %></p>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">Last updated 3 mins ago</small>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
     </div>
     <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
   </div>

@@ -24,6 +24,14 @@ class SinatraWebsite < Sinatra::Base
     erb :work, :layout => :template
   end
 
+  get '/about' do
+    erb :about, :layout => :template
+  end
+
+  get '/contact' do
+    erb :contact, :layout => :template
+  end
+
   get '/admin' do
     # protected!
     @projects = Project.all
@@ -100,6 +108,16 @@ class SinatraWebsite < Sinatra::Base
   end
 
   post '/admin/projects' do
+    if params[:image] && params[:image][:filename]
+      filename = params[:image][:filename]
+      file = params[:image][:tempfile]
+      path = "./public/uploads/#{filename}"
+
+      File.open(path, 'wb') do |f|
+        f.write(file.read)
+      end
+      params[:image] = "uploads/" + params[:image][:filename]
+    end
     proj = Project.new(params)
     if proj.save
       redirect '/admin'

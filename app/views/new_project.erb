@@ -1,6 +1,6 @@
 <div class="project-form container">
   <h3>Create a New Project</h3>
-  <form method="POST" action="/admin/projects">
+  <form method="POST" action="/admin/projects" enctype="multipart/form-data">
     <div class="form-group">
       <label for="title">Project Title</label>
       <input type="text" class="form-control" name="title">
@@ -10,16 +10,15 @@
       <input type="text" class="form-control" name="description">
     </div>
     <div class="form-group">
-      <label for="image">Image URL</label>
-      <input type="text" class="form-control" name="image">
-    </div>
-    <div class="form-group">
       <label for="github_url">GitHub URL</label>
       <input type="text" class="form-control" name="github_url">
     </div>
     <div class="form-group">
       <label for="deploy_url">Deployment Link</label>
       <input type="text" class="form-control" name="deploy_url">
+    </div>
+    <div class="form-group">
+      <input type="file" name="image">
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
