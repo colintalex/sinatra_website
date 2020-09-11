@@ -8,7 +8,7 @@ RSpec.describe "As a registered admin" do
 
     fill_in :title, with: 'Title'
     fill_in :description, with: 'description'
-    fill_in :image, with: 'image'
+    # fill_in :image, with: 'image'
     fill_in :github_url, with: 'ghlink'
     fill_in :deploy_url, with: 'deploy_link'
 
@@ -19,7 +19,7 @@ RSpec.describe "As a registered admin" do
     expect(Project.all.count).to eql(1)
     expect(proj.title).to eql('Title')
     expect(proj.description).to eql('description')
-    expect(proj.image).to eql('image')
+    # expect(proj.image).to eql('image')
     expect(proj.github_url).to eql('ghlink')
     expect(proj.deploy_url).to eql('deploy_link')
   end

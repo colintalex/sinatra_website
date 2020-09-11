@@ -24,6 +24,14 @@ class SinatraWebsite < Sinatra::Base
     erb :work, :layout => :template
   end
 
+  get '/about' do
+    erb :about, :layout => :template
+  end
+
+  get '/contact' do
+    erb :contact, :layout => :template
+  end
+
   get '/admin' do
     # protected!
     @projects = Project.all

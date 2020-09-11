@@ -16,9 +16,11 @@
               <div class="card-body bg-info">
                 <h4><%= project.title %></h4>
                 <%= project.description %>
-                <a href="<%= project.github_url %>">GitHub Repo</a>
+                  <a href="<%= project.github_url %>">GitHub Repo</a>
               </div>
-              <img class="card-img-bottom w-75 mx-auto bg-dark" src="<%= project.image %>" alt="">
+              <div class="container proj-bg bg-dark text-center">
+                <img class="card-img-bottom w-75 m-auto" src="<%= project.image %>" alt="">
+              </div>
             </div>
           </div>
         <% end %>
