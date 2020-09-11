@@ -100,6 +100,16 @@ class SinatraWebsite < Sinatra::Base
   end
 
   post '/admin/projects' do
+    if params[:image] && params[:image][:filename]
+      filename = params[:image][:filename]
+      file = params[:image][:tempfile]
+      path = "./public/uploads/#{filename}"
+
+      File.open(path, 'wb') do |f|
+        f.write(file.read)
+      end
+      params[:image] = "uploads/" + params[:image][:filename]
+    end
     proj = Project.new(params)
     if proj.save
       redirect '/admin'
