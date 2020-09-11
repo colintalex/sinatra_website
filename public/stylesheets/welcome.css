@@ -1,34 +1,29 @@
 .welcome-page {
-  background-image: url("../images/landing_colin_formatted.png");
+  background-image: url("../images/landing_colin_formatted_wide.png");
   background-size: cover;
   background-color: black;
-  background-position: 65% 35%;
+  background-position: 55% 45%;
   align-items: center;
   justify-content: center;
   display: flex;
   flex-direction: column;
-  height: 3800px;
+  height: 1000px;
   width: 100%;
   /* padding-top: 0px; */
 }
 
-.row-1 {
-  height: 31%;
-  width: 100%;
-  background-color: blue;
-  opacity: 45%;
+.welcome-shout {
+  vertical-align: middle;
 }
 
-.row-2 {
-  height: 34%;
-  width: 100%;
-  opacity: 45%;
-  background-color: red;
+#shout-name {
+  
 }
 
-.row-3 {
-  height: 35%;
-  width: 100%;
-  background-color: yellow;
-  opacity: 45%;
+#row-1 {
+  height: 500px;
+}
+
+#row-2 {
+  height: 500px;
 }
