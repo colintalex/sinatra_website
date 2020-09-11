@@ -1,5 +1,5 @@
 require './config/environment'
-require 'sinatra'
+require 'sinatra/base'
 
 class SinatraWebsite < Sinatra::Base
   use Rack::MethodOverride
