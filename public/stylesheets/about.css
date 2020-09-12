@@ -1,0 +1,13 @@
+div.about-page {
+  background-image: url("../images/landing_colin_formatted.png");
+  background-size: cover;
+  background-color: black;
+  background-position: 65% 35%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  height: 3800px;
+  width: 100%;
+  /* padding-top: 0px; aboot */
+}
