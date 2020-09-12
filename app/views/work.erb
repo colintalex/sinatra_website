@@ -1,5 +1,5 @@
 <div class="container">
-  <ul class="nav nav-tabs nav-fill" id="myTab" role="tablist">
+  <ul class="nav nav-tabs nav-fill sticky-top" role="tablist">
     <li class="nav-item" role="presentation">
       <a class="nav-link text-light active" id="projects-tab" data-toggle="tab" href="#projects" role="tab" aria-controls="projects" aria-selected="true">Code Projects</a>
     </li>
@@ -30,7 +30,7 @@
       <div class="card-group py-3">
         <% @graphics.each do |graphic| %>
           <div class="col-sm-4">
-            <div class="card text-white bg-secondary">
+            <div class="card text-white bg-secondary mt-3">
               <img src="<%= graphic.image %>" class="card-img-top mx-auto bg-dark" alt="">
               <div class="card-body">
                 <h6 class="card-title"><%= graphic.description %></h6>
