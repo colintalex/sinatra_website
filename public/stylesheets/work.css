@@ -1,5 +1,6 @@
 .nav#myTab {
-  
+  padding-left: 30%;
+  padding-right: 30%;
 }
 
 .tab-pane#projects, .nav-link#projects-tab {
