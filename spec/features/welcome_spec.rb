@@ -43,12 +43,5 @@ RSpec.describe "As a guest" do
 
       expect(current_path).to eql('/about')
     end
-
-    it "The Contact link works " do
-      visit '/'
-      click_on 'Contact'
-
-      expect(current_path).to eql('/contact')
-    end
   end
 end

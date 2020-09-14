@@ -69,7 +69,7 @@ class SinatraWebsite < Sinatra::Base
 
   patch '/admin/graphics/:id' do
     graphic = Graphic.find(params[:id])
-    if params[:image] && params[:image][:filename]
+    if params[:image] && params[:image]['filename']
       filename = params[:image][:filename]
       file = params[:image][:tempfile]
       path = "./public/uploads/#{filename}"
