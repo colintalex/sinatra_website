@@ -1,5 +1,6 @@
+require 'simplecov'
+SimpleCov.start
 ENV['RACK_ENV'] = 'test'
-
 require File.expand_path('../../config/environment', __FILE__)
 require 'rspec'
 require 'rack/test'
@@ -12,7 +13,7 @@ DatabaseCleaner.strategy = :truncation
 
 RSpec.configure do |config|
   config.include Capybara::DSL
-  
+
   config.before(:all) do
     DatabaseCleaner.clean
   end
