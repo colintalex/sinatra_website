@@ -21,4 +21,9 @@
 
 .nav-tabs {
   border-bottom: none;
+  top: 56px;
+}
+
+#graphic-image#hover {
+  transform: scale(1.5);
 }

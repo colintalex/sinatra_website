@@ -28,23 +28,20 @@ RSpec.describe "As a guest" do
 
     it "The My Work link works " do
       visit '/'
-      click_on 'My Work'
+      within '.navbar-nav' do
+        click_on 'My Work'
+      end
 
       expect(current_path).to eql('/work')
     end
 
     it "The About Me link works " do
       visit '/'
-      click_on 'About Me'
+      within '.navbar-nav' do
+        click_on 'About Me'
+      end
 
       expect(current_path).to eql('/about')
-    end
-
-    it "The Contact link works " do
-      visit '/'
-      click_on 'Contact'
-
-      expect(current_path).to eql('/contact')
     end
   end
 end

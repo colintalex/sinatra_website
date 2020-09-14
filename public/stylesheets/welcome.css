@@ -7,7 +7,7 @@
   justify-content: center;
   display: flex;
   flex-direction: column;
-  height: 1000px;
+  height: 100vh;
   width: 100%;
   /* padding-top: 0px; */
 }
@@ -16,9 +16,6 @@
   vertical-align: middle;
 }
 
-#shout-name {
-
-}
 
 #row-1 {
   height: 500px;
@@ -26,4 +23,26 @@
 
 #row-2 {
   height: 500px;
+}
+/*
+#shout-name {
+  font-size: 2rem;
+} */
+
+@include media-breakpoint-up(sm) {
+  #shout-name.h3 {
+    font-size: 1.2rem;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  #shout-name.h3 {
+    font-size: 1.4rem;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  #shout-name.h3 {
+    font-size: 1.6rem;
+  }
 }

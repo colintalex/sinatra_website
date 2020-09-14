@@ -1,4 +1,4 @@
-.about-page {
+.contact-page {
   background-image: url("../images/landing_colin_formatted.png");
   background-size: cover;
   background-color: black;
@@ -12,15 +12,8 @@
   /* padding-top: 0px; aboot */
 }
 
-.about-content {
+.contact-content {
+  background-color: black;
   height: 100vh;
-  opacity: 100%;
-}
-
-.about-content:after {
   opacity: 85%;
-}
-
-#about-card {
-  height: auto;
 }

@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 RSpec.describe "As a visitor" do
-  
+
   describe "I can view the page properly" do
     it "displays the nav bar" do
       visit '/work'
@@ -15,7 +15,7 @@ RSpec.describe "As a visitor" do
     it "displays the tabs for work" do
       visit '/work'
 
-      within '#myTab' do
+      within '.nav-tabs' do
         expect(page).to have_content('Code Projects')
         expect(page).to have_content('Graphic Design')
       end
