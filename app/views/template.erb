@@ -1,9 +1,12 @@
 <html>
 <head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="stylesheets/nav.css">
   <link rel="stylesheet" type="text/css" href="stylesheets/welcome.css">
   <link rel="stylesheet" type="text/css" href="stylesheets/work.css">
+  <link rel="stylesheet" type="text/css" href="stylesheets/about.css">
+  <link rel="stylesheet" type="text/css" href="stylesheets/contact.css">
   <link rel="stylesheet" type="text/css" href="stylesheets/application.css">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
@@ -17,7 +20,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
+            <li class="nav-item ">
               <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
@@ -37,7 +40,18 @@
   <%= yield %>
   <div class="footer bg-dark">
     <div class="container">
-      <h5>Footer</h5>
+      <div class="row">
+        <div class="col-sm-8">
+          <a href="#" class="">Home</a>
+          <a href="#" class="">My Work</a>
+          <a href="#" class="">About Me</a>
+        </div>
+        <div class="col-sm-4 p-3">
+          <a href="#" class="fa fa-github"></a>
+          <a href="#" class="fa fa-linkedin"></a>
+          <a href="#" class="fa fa-google"></a>
+        </div>
+      </div>
     </div>
   </div>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

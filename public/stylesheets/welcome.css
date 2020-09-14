@@ -7,7 +7,7 @@
   justify-content: center;
   display: flex;
   flex-direction: column;
-  height: 1000px;
+  height: 100vh;
   width: 100%;
   /* padding-top: 0px; */
 }
@@ -24,25 +24,25 @@
 #row-2 {
   height: 500px;
 }
-
+/*
 #shout-name {
   font-size: 2rem;
-}
+} */
 
 @include media-breakpoint-up(sm) {
-  #shout-name {
+  #shout-name.h3 {
     font-size: 1.2rem;
   }
 }
 
 @include media-breakpoint-up(md) {
-  #shout-name {
+  #shout-name.h3 {
     font-size: 1.4rem;
   }
 }
 
 @include media-breakpoint-up(lg) {
-  #shout-name {
+  #shout-name.h3 {
     font-size: 1.6rem;
   }
 }
