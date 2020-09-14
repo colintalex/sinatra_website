@@ -69,6 +69,16 @@ class SinatraWebsite < Sinatra::Base
 
   patch '/admin/graphics/:id' do
     graphic = Graphic.find(params[:id])
+    if params[:image] && params[:image][:filename]
+      filename = params[:image][:filename]
+      file = params[:image][:tempfile]
+      path = "./public/uploads/#{filename}"
+
+      File.open(path, 'wb') do |f|
+        f.write(file.read)
+      end
+      params[:image] = "uploads/" + params[:image][:filename]
+    end
     graphic.update(date: params[:date],
           description: params[:description],
                 image: params[:image],
@@ -99,6 +109,16 @@ class SinatraWebsite < Sinatra::Base
 
   patch '/admin/projects/:id' do
     proj = Project.find(params[:id])
+    if params[:image] && params[:image][:filename]
+      filename = params[:image][:filename]
+      file = params[:image][:tempfile]
+      path = "./public/uploads/#{filename}"
+
+      File.open(path, 'wb') do |f|
+        f.write(file.read)
+      end
+      params[:image] = "uploads/" + params[:image][:filename]
+    end
     proj.update(title: params[:title],
           description: params[:description],
                 image: params[:image],
