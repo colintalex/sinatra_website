@@ -22,3 +22,7 @@
 .nav-tabs {
   border-bottom: none;
 }
+
+#graphic-image#hover {
+  transform: scale(1.5);
+}

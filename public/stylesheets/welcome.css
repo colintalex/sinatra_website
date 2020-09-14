@@ -16,9 +16,6 @@
   vertical-align: middle;
 }
 
-#shout-name {
-
-}
 
 #row-1 {
   height: 500px;
@@ -26,4 +23,26 @@
 
 #row-2 {
   height: 500px;
+}
+
+#shout-name {
+  font-size: 2rem;
+}
+
+@include media-breakpoint-up(sm) {
+  #shout-name {
+    font-size: 1.2rem;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  #shout-name {
+    font-size: 1.4rem;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  #shout-name {
+    font-size: 1.6rem;
+  }
 }

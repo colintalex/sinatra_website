@@ -2,3 +2,7 @@ body {
     margin: 0px;
     background-color: black;
 }
+
+body.footer {
+  height: 200px;
+}
