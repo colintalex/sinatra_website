@@ -24,7 +24,7 @@ RSpec.describe "As a registered admin" do
     expect(proj.deploy_url).to eql('deploy_link')
   end
 
-  xit "I can edit and update a project" do
+  it "I can edit and update a project" do
     project = Project.create(title: 'Title',
              description: 'description',
                    image: 'image',
@@ -36,7 +36,7 @@ RSpec.describe "As a registered admin" do
     within '.project-list' do
       click_on 'Edit Project'
     end
-
+    
     fill_in :title, with: 'New Title'
     fill_in :description, with: 'New description'
     click_on 'Submit'
