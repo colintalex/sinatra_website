@@ -1,12 +1,12 @@
-require './config/environment'
 require 'sinatra/base'
+require './config/environment'
+require './app//helpers/application_helper'
 
 class SinatraWebsite < Sinatra::Base
-  use Rack::MethodOverride
   set :database_file, './config/database.yml'
-  # use Rack::Auth::Basic do |username, password|
-  #   username == 'admin' and password == 'admin'
-  # end
+
+  helpers Sinatra::SinatraWebsite::ImageHelpers
+
   configure do
     set :method_override, true
     set :root, APP_ROOT
@@ -44,16 +44,7 @@ class SinatraWebsite < Sinatra::Base
   end
 
   post '/admin/graphics' do
-    if params[:image] && params[:image][:filename]
-      filename = params[:image][:filename]
-      file = params[:image][:tempfile]
-      path = "./public/uploads/#{filename}"
-
-      File.open(path, 'wb') do |f|
-        f.write(file.read)
-      end
-      params[:image] = "uploads/" + params[:image][:filename]
-    end
+    check_and_save_image(params)    
     graphic = Graphic.new(params)
     if graphic.save
       redirect '/admin'
@@ -69,16 +60,7 @@ class SinatraWebsite < Sinatra::Base
 
   patch '/admin/graphics/:id' do
     graphic = Graphic.find(params[:id])
-    if params[:image] && params[:image]['filename']
-      filename = params[:image][:filename]
-      file = params[:image][:tempfile]
-      path = "./public/uploads/#{filename}"
-
-      File.open(path, 'wb') do |f|
-        f.write(file.read)
-      end
-      params[:image] = "uploads/" + params[:image][:filename]
-    end
+    check_and_save_image(params)    
     graphic.update(date: params[:date],
           description: params[:description],
                 image: params[:image],
@@ -109,16 +91,7 @@ class SinatraWebsite < Sinatra::Base
 
   patch '/admin/projects/:id' do
     proj = Project.find(params[:id])
-    if params[:image] && params[:image][:filename]
-      filename = params[:image][:filename]
-      file = params[:image][:tempfile]
-      path = "./public/uploads/#{filename}"
-
-      File.open(path, 'wb') do |f|
-        f.write(file.read)
-      end
-      params[:image] = "uploads/" + params[:image][:filename]
-    end
+    check_and_save_image(params)
     proj.update(title: params[:title],
           description: params[:description],
                 image: params[:image],
@@ -128,16 +101,7 @@ class SinatraWebsite < Sinatra::Base
   end
 
   post '/admin/projects' do
-    if params[:image] && params[:image][:filename]
-      filename = params[:image][:filename]
-      file = params[:image][:tempfile]
-      path = "./public/uploads/#{filename}"
-
-      File.open(path, 'wb') do |f|
-        f.write(file.read)
-      end
-      params[:image] = "uploads/" + params[:image][:filename]
-    end
+    check_and_save_image(params)
     proj = Project.new(params)
     if proj.save
       redirect '/admin'
