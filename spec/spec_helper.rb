@@ -1,7 +1,6 @@
 require 'simplecov'
 SimpleCov.start
-require 'coveralls'
-Coveralls.wear!('rails')
+
 ENV['RACK_ENV'] = 'test'
 require File.expand_path('../../config/environment', __FILE__)
 require 'rspec'

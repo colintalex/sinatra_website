@@ -21,7 +21,6 @@ group :test do
   gem 'rspec'
   gem 'rack-test'
   gem 'simplecov'
-  gem 'coveralls', require: false
 end
 
 group :production, :development, :test do
