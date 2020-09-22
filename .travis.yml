@@ -12,12 +12,12 @@ before_install:
 - yes | gem update --system --force
 - gem install bundler
 before_script:
-  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-darwin-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
   - bundle exec rake db:{create,migrate} RAILS_ENV=test
+  - yarn
 script:
-- yarn
-- bundle exec rspec
+  - bundle exec rspec
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
