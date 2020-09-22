@@ -13,6 +13,7 @@ gem 'shotgun'
 gem 'rerun'
 gem 'bootstrap', '~> 4.5.2'
 gem 'pry'
+gem 'coveralls', require: false
 
 group :test do
   gem 'capybara'
