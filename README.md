@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/colintalex/sinatra_website.svg?branch=master)](https://travis-ci.com/colintalex/sinatra_website)[![Coverage Status](https://coveralls.io/repos/github/colintalex/sinatra_website/badge.svg?branch=master)](https://coveralls.io/github/colintalex/sinatra_website?branch=master)
+[![Build Status](https://travis-ci.com/colintalex/sinatra_website.svg?branch=master)](https://travis-ci.com/colintalex/sinatra_website) [![Coverage Status](https://coveralls.io/repos/github/colintalex/sinatra_website/badge.svg?branch=master)](https://coveralls.io/github/colintalex/sinatra_website?branch=master)
 
 # Personal Portfolio Site on Sinatra
 
